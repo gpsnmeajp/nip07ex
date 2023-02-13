@@ -14,6 +14,8 @@ const {
 const winax = require('winax');
 const wsh = new winax.Object('WScript.Shell');
 
+// https://dev.classmethod.jp/articles/chrome-native-message/
+
 let { type, data } = nip19.decode(fs.readFileSync("C:\\nsec_privatekey.txt", 'utf8'));
 if (type != "nsec") { exit(-1); }
 global.privateKey = data; //グローバル変数にする
@@ -55,8 +57,8 @@ async function handleMessage(message) {
             let event = message.data.event;
             const result = wsh.Popup("署名しますか？\n要求元: "+ message.origin +"\nkind:"+ event.kind +"\ncontent: "+event.content + "\ntag:"+ JSON.stringify(event.tags),0,"nip07ex",1+32+256+65536);
             if(result === 1){
-                event.id = getEventHash(event);
                 event.pubkey = getPublicKey(global.privateKey);
+                event.id = getEventHash(event);
                 event.sig = signEvent(event, global.privateKey);
                 output(event);
             }else{
