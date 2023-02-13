@@ -1,0 +1,3 @@
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Google\Chrome\NativeMessagingHosts\jp.ne.sakura.sabowl.nip07ex]
+@="d:\\myprojects\\nip07ex\\process\\nip07ex\\bin\\nativemessaging-manifest.json"

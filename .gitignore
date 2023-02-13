@@ -1,3 +1,7 @@
+input.txt
+output.txt
+exception.txt
+
 # Logs
 logs
 *.log

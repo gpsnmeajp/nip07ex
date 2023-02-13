@@ -1,0 +1,9 @@
+{
+  "name": "jp.ne.sakura.sabowl.nip07ex",
+  "description": "NIP-07 Native Extension",
+  "path": "d:\\myprojects\\nip07ex\\nip07ex_node\\nip07ex.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://enojnilcmbfinccoelejlbhfnemmadaa/"
+  ]
+}

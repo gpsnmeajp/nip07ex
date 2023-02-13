@@ -1,0 +1,24 @@
+{
+  "name": "nip07ex",
+  "description": "nip07ex",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions":["nativeMessaging"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts":[
+    {
+        "matches":["<all_urls>"],
+        "js":["content_script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources":[{
+    "resources":["content_injection.js"],
+    "matches": ["<all_urls>"],
+    "use_dynamic_url":true
+  }]
+}
